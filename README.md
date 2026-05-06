@@ -64,7 +64,7 @@
 
 ```bash
 # Clonar o repositório
-git clone https://github.com/Yur1b01c4/sistema-gestao-servicos.git
+git clone https://github.com/Yur1b01c4/Sistema-de-Gerenciamento-de-Servicos.git
 cd sistema-gestao-servicos
 
 # Instalar dependências
