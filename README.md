@@ -1,131 +1,148 @@
 # Sistema de Gerenciamento de Serviços
 
-> **PWA de gestão para técnicos autônomos.**
-> Controle de Ordens de Serviço, empresas contratantes e geração de relatórios PDF/XLSX.
+PWA para técnicos autônomos: controle de Ordens de Serviço (OS), gerenciamento de empresas contratantes e geração de relatórios (PDF / XLSX).
 
-![Stack](https://img.shields.io/badge/React-19-61DAFB?logo=react)
-![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite)
-![Supabase](https://img.shields.io/badge/Supabase-Backend-3FCF8E?logo=supabase)
-![Vercel](https://img.shields.io/badge/Vercel-Deploy-000?logo=vercel)
-
----
-
-## 🔗 Links Rápidos
-
-| Recurso | URL |
-|---|---|
-| **App Demo** | `[URL do App em Produção]` |
-| **Repositório GitHub** | `[URL do seu Repositório]` |
+[![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://reactjs.org/)
+[![Vite 8](https://img.shields.io/badge/Vite-8-646CFF?logo=vite)](https://vitejs.dev/)
+[![Supabase](https://img.shields.io/badge/Supabase-Backend-3FCF8E?logo=supabase)](https://supabase.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-Deploy-000?logo=vercel)](https://vercel.com/)
 
 ---
 
-## 📋 Sobre o Projeto
+## Links rápidos
 
-**Sistema de Gerenciamento de Serviços** é uma aplicação para técnicos autônomos que prestam serviços de instalação, manutenção e reparo de redes. Antes usavam uma planilha Excel para controlar os serviços. Este sistema substitui essa planilha por um app web profissional.
-
-### Funcionalidades
-
-- **Login** com autenticação real (Supabase Auth)
-- **Dashboard** com KPIs (OS do mês, faturamento, OS hoje, OS abertas)
-- **Empresas** — CRUD de empresas contratantes com contatos para relatório
-- **Ordens de Serviço** — Ciclo completo: Aberta → Concluída → Faturada
-  - Captura de foto de evidência (upload para Supabase Storage)
-  - Captura de GPS via navegador
-- **Relatórios** — Filtro por empresa/período/técnico, exportação PDF e XLSX
-- **Dark/Light Mode**
-- **Responsivo** (mobile-first, otimizado para celular de campo)
+- Repositório: https://github.com/Yur1b01c4/Sistema-de-Gerenciamento-de-Servicos
 
 ---
 
-## 🛠️ Stack Tecnológica
+## Visão geral
 
-| Camada | Tecnologia | Versão |
-|---|---|---|
-| **Frontend** | React (JavaScript) | 19.x |
-| **Bundler** | Vite | 8.x |
-| **Roteamento** | React Router DOM | 7.x |
-| **Estilos** | Vanilla CSS (design system com tokens) | — |
-| **Backend/Auth** | Supabase (PostgreSQL + Auth + Storage) | — |
-| **PDF** | jsPDF + jsPDF-AutoTable | 2.5 / 3.8 |
-| **XLSX** | SheetJS (xlsx) | 0.18 |
-| **Ícones** | Lucide React | — |
-| **Hospedagem** | Vercel | — |
-| **Fontes** | Google Fonts (Inter + Barlow) | — |
+O Sistema de Gerenciamento de Serviços é uma aplicação progressiva (PWA) desenvolvida para facilitar o dia a dia de técnicos autônomos que atuam com instalação, manutenção e reparo de redes. A aplicação substitui processos baseados em planilhas, centralizando o fluxo de Ordens de Serviço, controle de clientes/empresas e geração de relatórios exportáveis.
+
+Principais objetivos:
+- Agilizar a rotina de campo.
+- Registrar evidências (fotos, localização).
+- Gerar relatórios com filtros por empresa, período e técnico.
+- Facilitar faturamento e acompanhamento de OS.
 
 ---
 
-## 🚀 Como Rodar Localmente
+## Funcionalidades
 
-### Pré-requisitos
-- **Node.js** v20+ ([download](https://nodejs.org))
-- **Git** ([download](https://git-scm.com))
+- Autenticação (Supabase Auth)
+- Dashboard com KPIs (OS do mês, faturamento, OS abertas, OS do dia)
+- Cadastro e gerenciamento de empresas contratantes (CRUD)
+- Ciclo de Ordens de Serviço: Aberta → Concluída → Faturada
+  - Upload de fotos para evidência (Supabase Storage)
+  - Captura de GPS via navegador (quando permitido)
+- Relatórios filtráveis e exportação em PDF e XLSX
+- Modo escuro/ claro
+- Design responsivo (mobile-first)
 
-### Instalação
+---
 
-```bash
-# Clonar o repositório
-git clone https://github.com/Yur1b01c4/Sistema-de-Gerenciamento-de-Servicos.git
-cd sistema-gestao-servicos
+## Arquitetura e stack
 
-# Instalar dependências
-npm install
+- Frontend: React 19 (JavaScript)
+- Bundler: Vite 8
+- Roteamento: React Router DOM
+- Estilos: CSS com design tokens (src/index.css)
+- Backend/Auth: Supabase (Postgres, Auth, Storage)
+- Geração de PDF: jsPDF + jsPDF-AutoTable
+- Exportação XLSX: SheetJS (xlsx)
+- Ícones: Lucide React
+- Hospedagem: Vercel
+- Fontes: Google Fonts (Inter, Barlow)
 
-# Criar arquivo de variáveis de ambiente
-# Copie o .env.example para .env.local e preencha com suas chaves
-cp .env.example .env.local
+---
 
-# Rodar em modo desenvolvimento
-npm run dev
-```
+## Requisitos
 
-O app estará disponível em `http://localhost:5173/`
+- Node.js >= 20
+- Git
+- Conta Supabase (para o backend, Auth e Storage)
 
-### Variáveis de Ambiente
+---
 
-Crie um arquivo `.env.local` na raiz do projeto:
+## Rodando localmente
+
+1. Clone o repositório
+   ```bash
+   git clone https://github.com/Yur1b01c4/Sistema-de-Gerenciamento-de-Servicos.git
+   cd Sistema-de-Gerenciamento-de-Servicos
+   ```
+
+2. Instale dependências
+   ```bash
+   npm install
+   ```
+
+3. Crie o arquivo de ambiente
+   ```bash
+   cp .env.example .env.local
+   # preencha .env.local com as chaves do Supabase
+   ```
+
+4. Execute em desenvolvimento
+   ```bash
+   npm run dev
+   ```
+
+O app ficará disponível em: http://localhost:5173
+
+---
+
+## Variáveis de ambiente
+
+Crie `.env.local` na raiz com as chaves do seu projeto Supabase:
 
 ```env
-VITE_SUPABASE_URL = Supabase_URL_aqui
-VITE_SUPABASE_ANON_KEY = Anon_key_aqui
+VITE_SUPABASE_URL=your-supabase-url
+VITE_SUPABASE_ANON_KEY=your-anon-key
 ```
 
-> ⚠️ O `.env.local` está no `.gitignore` — NUNCA suba chaves para o GitHub.
+Atenção: o arquivo `.env.local` está no `.gitignore`. Nunca versionar chaves.
 
 ---
 
-## 📦 Como Fazer Deploy (Atualizar o Site)
+## Como fazer deploy
 
-Sempre que alterar o código e quiser atualizar o site:
-
-```bash
-git add .
-git commit -m "Descreva o que mudou"
-git push
-```
-
-A Vercel detecta automaticamente e faz o redeploy em ~30 segundos.
+1. Commit e push das alterações:
+   ```bash
+   git add .
+   git commit -m "Descrição das mudanças"
+   git push
+   ```
+2. O deploy automático pelo Vercel será acionado após o push (configurar projeto no Vercel apontando para este repositório).
 
 ---
 
-## 📚 Documentação Adicional
+## Banco de dados / Infraestrutura
 
-| Documento | Conteúdo |
-|---|---|
-| [DEVELOPMENT.md](./DEVELOPMENT.md) | Guia de desenvolvimento: como adicionar funcionalidades, estrutura de pastas, padrões de código |
-| [INFRASTRUCTURE.md](./INFRASTRUCTURE.md) | Infraestrutura: Supabase, Vercel, credenciais, como cadastrar usuários, banco de dados |
-| [supabase_setup.sql](../supabase_setup.sql) | Script SQL para criação das tabelas do banco |
+- Arquivo com script de criação das tabelas: `supabase_setup.sql`
+- Configurações e instruções de infraestrutura estão em: `INFRASTRUCTURE.md`
+- Guia de desenvolvimento: `DEVELOPMENT.md`
 
 ---
 
-## 🎨 Design System
+## Design
 
-- **Paleta principal:** Azul naval `#0A1B3D` + Laranja `#F47B20`
-- **Tipografia:** Barlow (títulos) + Inter (corpo)
-- **Modo escuro/claro** com variáveis CSS
-- **Tokens CSS** definidos em `src/index.css`
+- Paleta principal: Azul naval `#0A1B3D` e Laranja `#F47B20`
+- Tipografia: Barlow (títulos) e Inter (corpo)
+- Tokens CSS e tema dark/light definidos em `src/index.css`
+
+Sugestão: incluir capturas de tela do dashboard e formulários nesta seção para facilitar a visualização.
 
 ---
 
-## 📝 Licença
+## Boas práticas e contribuições
 
-Desenvolvido para portfólio.
+- Siga as convenções descritas em `DEVELOPMENT.md`
+- Abra issues para bugs ou features; use PRs com descrição clara e screenshots quando aplicável
+- Escreva mensagens de commit objetivas (tipo: feat/, fix/, chore/)
+
+---
+
+## Licença
+
+Projeto para portfólio — use conforme acordado com o autor.
